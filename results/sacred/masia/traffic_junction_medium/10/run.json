@@ -1,0 +1,125 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "/home/kamil/Desktop/Zaidi/MISA work/try again/Multi-Agent-Communication-Considering-Representation-Learning/src",
+    "dependencies": [
+      "numpy==1.26.2",
+      "PyYAML==6.0.1",
+      "sacred==0.8.5",
+      "torch==2.1.1"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [
+      {
+        "commit": "bef503decff17e7005b1b760f2d9b7c8691b9fc4",
+        "dirty": true,
+        "url": "https://github.com/chenf-ai/Multi-Agent-Communication-Considering-Representation-Learning"
+      },
+      {
+        "commit": "bef503decff17e7005b1b760f2d9b7c8691b9fc4",
+        "dirty": true,
+        "url": "https://github.com/chenf-ai/Multi-Agent-Communication-Considering-Representation-Learning"
+      },
+      {
+        "commit": "bef503decff17e7005b1b760f2d9b7c8691b9fc4",
+        "dirty": true,
+        "url": "https://github.com/chenf-ai/Multi-Agent-Communication-Considering-Representation-Learning"
+      },
+      {
+        "commit": "bef503decff17e7005b1b760f2d9b7c8691b9fc4",
+        "dirty": true,
+        "url": "https://github.com/chenf-ai/Multi-Agent-Communication-Considering-Representation-Learning"
+      }
+    ],
+    "sources": [
+      [
+        "main.py",
+        "_sources/main_3c56889e6bd6bf4dabb228d4dbfa334d.py"
+      ],
+      [
+        "msra_run.py",
+        "_sources/msra_run_c828b00975e1d1764dd92e5612b44c17.py"
+      ],
+      [
+        "run.py",
+        "_sources/run_4875410c485d2960185abeca02418fdf.py"
+      ],
+      [
+        "utils/logging.py",
+        "_sources/logging_8309e899ab76a4e610428ba7ee8d8acb.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/home/kamil/Desktop/Zaidi/MISA work/try again/Multi-Agent-Communication-Considering-Representation-Learning/venv/lib/python3.10/site-packages/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"/home/kamil/Desktop/Zaidi/MISA work/try again/Multi-Agent-Communication-Considering-Representation-Learning/src/main.py\", line 40, in my_main\n    msra_run(_run, config, _log)\n",
+    "  File \"/home/kamil/Desktop/Zaidi/MISA work/try again/Multi-Agent-Communication-Considering-Representation-Learning/src/msra_run.py\", line 130, in msra_run\n    run_sequential(args=args, logger=logger)\n",
+    "  File \"/home/kamil/Desktop/Zaidi/MISA work/try again/Multi-Agent-Communication-Considering-Representation-Learning/src/msra_run.py\", line 367, in run_sequential\n    json.dump(entry, file)\n",
+    "  File \"/usr/lib/python3.10/json/__init__.py\", line 179, in dump\n    for chunk in iterable:\n",
+    "  File \"/usr/lib/python3.10/json/encoder.py\", line 431, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n",
+    "  File \"/usr/lib/python3.10/json/encoder.py\", line 405, in _iterencode_dict\n    yield from chunks\n",
+    "  File \"/usr/lib/python3.10/json/encoder.py\", line 438, in _iterencode\n    o = _default(o)\n",
+    "  File \"/usr/lib/python3.10/json/encoder.py\", line 179, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n",
+    "TypeError: Object of type ndarray is not JSON serializable\n"
+  ],
+  "heartbeat": "2023-12-25T12:26:08.531289",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpus": {
+      "driver_version": "525.147.05",
+      "gpus": [
+        {
+          "model": "NVIDIA GeForce GTX 1060",
+          "persistence_mode": false,
+          "total_memory": 6144
+        }
+      ]
+    },
+    "hostname": "Koky-Hero",
+    "os": [
+      "Linux",
+      "Linux-6.2.0-39-generic-x86_64-with-glibc2.35"
+    ],
+    "python_version": "3.10.12"
+  },
+  "meta": {
+    "command": "my_main",
+    "config_updates": {},
+    "named_configs": [],
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--id": null,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2023-12-25T12:26:01.926569",
+  "status": "FAILED",
+  "stop_time": "2023-12-25T12:26:08.534707"
+}

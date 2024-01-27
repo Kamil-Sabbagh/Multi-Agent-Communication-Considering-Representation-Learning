@@ -1,0 +1,132 @@
+{
+  "battle_won_mean": [
+    1.0
+  ],
+  "battle_won_mean_T": [
+    40
+  ],
+  "ep_length_mean": [
+    40.0
+  ],
+  "ep_length_mean_T": [
+    40
+  ],
+  "epsilon": [
+    1.0
+  ],
+  "epsilon_T": [
+    40
+  ],
+  "grad_norm": [
+    27.66485595703125
+  ],
+  "grad_norm_T": [
+    1280
+  ],
+  "model_loss": [
+    1.8558518886566162
+  ],
+  "model_loss_T": [
+    1280
+  ],
+  "q_taken_mean": [
+    0.005159655809402466
+  ],
+  "q_taken_mean_T": [
+    1280
+  ],
+  "repr_loss": [
+    203.75765991210938
+  ],
+  "repr_loss_T": [
+    1280
+  ],
+  "return_mean": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": -15.46
+    }
+  ],
+  "return_mean_T": [
+    40
+  ],
+  "return_std": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.0
+    }
+  ],
+  "return_std_T": [
+    40
+  ],
+  "rew_pred_loss": [
+    201.87564086914062
+  ],
+  "rew_pred_loss_T": [
+    1280
+  ],
+  "rl_loss": [
+    0.9983192682266235
+  ],
+  "rl_loss_T": [
+    1280
+  ],
+  "target_mean": [
+    0.01029421091079712
+  ],
+  "target_mean_T": [
+    1280
+  ],
+  "td_error_abs": [
+    0.6793272972106934
+  ],
+  "td_error_abs_T": [
+    1280
+  ],
+  "test_battle_won_mean": [
+    0.8
+  ],
+  "test_battle_won_mean_T": [
+    40
+  ],
+  "test_ep_length_mean": [
+    40.0
+  ],
+  "test_ep_length_mean_T": [
+    40
+  ],
+  "test_return_mean": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": -14.969
+    }
+  ],
+  "test_return_mean_T": [
+    40
+  ],
+  "test_return_std": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 28.437828134370598
+    }
+  ],
+  "test_return_std_T": [
+    40
+  ],
+  "tot_loss": [
+    204.7559814453125
+  ],
+  "tot_loss_T": [
+    1280
+  ],
+  "vae_loss": [
+    0.026173416525125504
+  ],
+  "vae_loss_T": [
+    1280
+  ]
+}

@@ -45,8 +45,100 @@ class EpisodeRunner:
         self.env.reset()
         self.t = 0
 
+    # def run(self, test_mode=False, teacher_forcing=False):
+    #     self.reset()
+    #     log_data = []  # Initialize log list
+
+    #     terminated = False
+    #     episode_return = 0
+    #     self.mac.init_hidden(batch_size=self.batch_size)
+
+    #     while not terminated:
+
+    #         pre_transition_data = {
+    #             "state": [self.env.get_state()],
+    #             "avail_actions": [self.env.get_avail_actions()],
+    #             "obs": [self.env.get_obs()]
+    #         }
+
+    #         # Capture data before the action is taken
+    #         current_obs = self.env.get_obs()
+    #         actions = self.mac.select_actions(self.batch, t_ep=self.t, t_env=self.t_env, test_mode=test_mode)
+    #         # Perform the environment step
+    #         reward, terminated, env_info = self.env.step(actions[0])
+    #         # Capture data after the action is taken
+    #         next_obs = self.env.get_obs()
+
+    #         # Log the data
+    #         log_data.append({
+    #             "current_observation": current_obs,
+    #             "action": actions[0],
+    #             "next_observation": next_obs
+    #         })
+
+    #         self.batch.update(pre_transition_data, ts=self.t)
+
+    #         # Pass the entire batch of experiences up till now to the agents
+    #         # Receive the actions for each agent at this timestep in a batch of size 1
+    #         if teacher_forcing:
+    #             actions = self.mac.select_actions(self.batch, t_ep=self.t, t_env=self.t_env, test_mode=test_mode, teacher_forcing=True)
+    #         else:
+    #             actions = self.mac.select_actions(self.batch, t_ep=self.t, t_env=self.t_env, test_mode=test_mode)
+
+    #         reward, terminated, env_info = self.env.step(actions[0])
+    #         episode_return += reward
+
+    #         post_transition_data = {
+    #             "actions": actions,
+    #             "reward": [(reward,)],
+    #             "terminated": [(terminated != env_info.get("episode_limit", False),)],
+    #         }
+
+    #         self.batch.update(post_transition_data, ts=self.t)
+
+    #         self.t += 1
+
+    #     last_data = {
+    #         "state": [self.env.get_state()],
+    #         "avail_actions": [self.env.get_avail_actions()],
+    #         "obs": [self.env.get_obs()]
+    #     }
+    #     self.batch.update(last_data, ts=self.t)
+
+    #     # Select actions in the last stored state
+    #     actions = self.mac.select_actions(self.batch, t_ep=self.t, t_env=self.t_env, test_mode=test_mode)
+    #     self.batch.update({"actions": actions}, ts=self.t)
+
+    #     cur_stats = self.test_stats if test_mode else self.train_stats
+    #     cur_returns = self.test_returns if test_mode else self.train_returns
+    #     log_prefix = "test_" if test_mode else ""
+    #     if teacher_forcing:
+    #         log_prefix = "teacher_forcing_" + log_prefix
+    #     cur_stats.update({k: cur_stats.get(k, 0) + env_info.get(k, 0) for k in set(cur_stats) | set(env_info)})
+    #     cur_stats["n_episodes"] = 1 + cur_stats.get("n_episodes", 0)
+    #     cur_stats["ep_length"] = self.t + cur_stats.get("ep_length", 0)
+
+    #     if not test_mode:
+    #         self.t_env += self.t
+
+    #     cur_returns.append(episode_return)
+
+    #     if test_mode and (len(self.test_returns) == self.args.test_nepisode):
+    #         self._log(cur_returns, cur_stats, log_prefix)
+    #     elif self.t_env - self.log_train_stats_t >= self.args.runner_log_interval:
+    #         self._log(cur_returns, cur_stats, log_prefix)
+    #         if hasattr(self.mac.action_selector, "epsilon"):
+    #             self.logger.log_stat("epsilon", self.mac.action_selector.epsilon, self.t_env)
+    #         self.log_train_stats_t = self.t_env
+
+    #     return self.batch, log_data
+
+
+####
+        
     def run(self, test_mode=False, teacher_forcing=False):
         self.reset()
+        log_data = []  # Initialize log list
 
         terminated = False
         episode_return = 0
@@ -62,15 +154,26 @@ class EpisodeRunner:
 
             self.batch.update(pre_transition_data, ts=self.t)
 
-            # Pass the entire batch of experiences up till now to the agents
-            # Receive the actions for each agent at this timestep in a batch of size 1
+            # Capture data before the action is taken
+            current_obs = self.env.get_obs()
             if teacher_forcing:
                 actions = self.mac.select_actions(self.batch, t_ep=self.t, t_env=self.t_env, test_mode=test_mode, teacher_forcing=True)
             else:
                 actions = self.mac.select_actions(self.batch, t_ep=self.t, t_env=self.t_env, test_mode=test_mode)
 
+            # Perform the environment step
             reward, terminated, env_info = self.env.step(actions[0])
             episode_return += reward
+
+            # Capture data after the action is taken
+            next_obs = self.env.get_obs()
+
+            # Log the data
+            log_data.append({
+                "current_observation": current_obs,
+                "action": actions[0],
+                "next_observation": next_obs
+            })
 
             post_transition_data = {
                 "actions": actions,
@@ -115,7 +218,9 @@ class EpisodeRunner:
                 self.logger.log_stat("epsilon", self.mac.action_selector.epsilon, self.t_env)
             self.log_train_stats_t = self.t_env
 
-        return self.batch
+        return self.batch, log_data
+
+####
 
     def _log(self, returns, stats, prefix):
         self.logger.log_stat(prefix + "return_mean", np.mean(returns), self.t_env)

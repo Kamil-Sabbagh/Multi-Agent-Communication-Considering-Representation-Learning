@@ -1,0 +1,101 @@
+{
+  "battle_won_mean": {
+    "steps": [
+      40
+    ],
+    "timestamps": [
+      "2023-12-25T12:24:28.618539"
+    ],
+    "values": [
+      0.0
+    ]
+  },
+  "ep_length_mean": {
+    "steps": [
+      40
+    ],
+    "timestamps": [
+      "2023-12-25T12:24:28.618591"
+    ],
+    "values": [
+      40.0
+    ]
+  },
+  "epsilon": {
+    "steps": [
+      40
+    ],
+    "timestamps": [
+      "2023-12-25T12:24:28.618650"
+    ],
+    "values": [
+      1.0
+    ]
+  },
+  "return_mean": {
+    "steps": [
+      40
+    ],
+    "timestamps": [
+      "2023-12-25T12:24:28.618230"
+    ],
+    "values": [
+      -131.63
+    ]
+  },
+  "return_std": {
+    "steps": [
+      40
+    ],
+    "timestamps": [
+      "2023-12-25T12:24:28.618472"
+    ],
+    "values": [
+      0.0
+    ]
+  },
+  "test_battle_won_mean": {
+    "steps": [
+      40
+    ],
+    "timestamps": [
+      "2023-12-25T12:24:33.272639"
+    ],
+    "values": [
+      0.825
+    ]
+  },
+  "test_ep_length_mean": {
+    "steps": [
+      40
+    ],
+    "timestamps": [
+      "2023-12-25T12:24:33.272687"
+    ],
+    "values": [
+      40.0
+    ]
+  },
+  "test_return_mean": {
+    "steps": [
+      40
+    ],
+    "timestamps": [
+      "2023-12-25T12:24:33.272422"
+    ],
+    "values": [
+      -15.845749999999999
+    ]
+  },
+  "test_return_std": {
+    "steps": [
+      40
+    ],
+    "timestamps": [
+      "2023-12-25T12:24:33.272582"
+    ],
+    "values": [
+      32.203821736519096
+    ]
+  }
+}

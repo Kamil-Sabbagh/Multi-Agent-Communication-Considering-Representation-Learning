@@ -1,5 +1,6 @@
 from envs.multiagentenv import MultiAgentEnv
-from ic3net_envs.traffic_junction_env import TrafficJunctionEnv
+#from src.IC3Net.ic3net-envs.ic3net_envs.traffic_junction_env.py import TrafficJunctionEnv
+from IC3Net.ic3net_envs.ic3net_envs.traffic_junction_env import TrafficJunctionEnv
 import numpy as np
 import gym
 import argparse

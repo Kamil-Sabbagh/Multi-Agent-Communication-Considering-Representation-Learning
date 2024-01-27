@@ -1,0 +1,93 @@
+[INFO 21:44:48] pymarl Running command 'my_main'
+[INFO 21:44:48] pymarl Started run with ID "3"
+[DEBUG 21:44:48] pymarl Starting Heartbeat
+[DEBUG 21:44:48] my_main Started
+[INFO 21:44:48] my_main Experiment Parameters:
+[INFO 21:44:48] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'add_value_last_step': True,
+    'agent': 'full_comm',
+    'agent_output_type': 'q',
+    'batch_size': 32,
+    'batch_size_run': 1,
+    'big_net_agent': False,
+    'buffer_cpu_only': True,
+    'buffer_size': 5000,
+    'checkpoint_path': '',
+    'double_q': True,
+    'env': 'lbf',
+    'env_args': {   'field_size': 11,
+                    'force_coop': False,
+                    'grid_observation': True,
+                    'key': 'Foraging-8x8-2p-3f-s2',
+                    'max_episode_steps': 25,
+                    'max_food': 4,
+                    'max_player_level': 2,
+                    'normalize_reward': True,
+                    'players': 6,
+                    'pretrained_wrapper': None,
+                    'seed': 223784694,
+                    'sight': 1},
+    'epsilon_anneal_time': 50000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'evaluation_epsilon': 0.0,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'hidden_dim': 64,
+    'hypergroup': None,
+    'hypernet_embed': 64,
+    'hypernet_layers': 2,
+    'label': 'default_label',
+    'learner': 'q_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 50000,
+    'lr': 0.0005,
+    'mac': 'basic_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'full_comm',
+    'noise_env': False,
+    'noise_type': 0,
+    'obs_agent_id': True,
+    'obs_individual_obs': False,
+    'obs_last_action': False,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'repeat_id': 1,
+    'runner': 'episode',
+    'runner_log_interval': 10000,
+    'save_model': True,
+    'save_model_interval': 500000,
+    'save_replay': False,
+    'seed': 223784694,
+    'standardise_returns': False,
+    'standardise_rewards': True,
+    't_max': 2050000,
+    'target_update_interval_or_tau': 200,
+    'test_greedy': True,
+    'test_interval': 50000,
+    'test_nepisode': 100,
+    'use_cuda': True,
+    'use_rnn': True,
+    'use_tensorboard': True}
+
+[INFO 21:44:50] my_main Beginning training for 2050000 timesteps
+/home/kamil/Desktop/Zaidi/MISA work/try again/Multi-Agent-Communication-Considering-Representation-Learning/src/components/episode_buffer.py:103: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:261.)
+  v = th.tensor(v, dtype=dtype, device=self.device)
+/home/kamil/Desktop/Zaidi/MISA work/try again/Multi-Agent-Communication-Considering-Representation-Learning/src/components/episode_buffer.py:103: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  v = th.tensor(v, dtype=dtype, device=self.device)
+[INFO 21:44:51] my_main t_env: 25 / 2050000
+[INFO 21:44:51] my_main Estimated time left: 26 seconds. Time passed: 0 seconds
+[INFO 21:44:57] my_main Saving models to results/models/lbf/Foraging-11x11-6p-4f-s1/full_comm_NoRemark/full_comm_seed223784694_Foraging-11x11-6p-4f-s1_2023-12-10 21:44:48.648287/25
+[INFO 21:48:04] my_main Recent Stats | t_env:      50016 | Episode:     2012
+ep_length_mean:           24.9478	epsilon:                   0.2387	grad_norm:                17.9655	loss:                      1.5600
+q_taken_mean:              0.3437	return_mean:               0.2000	return_std:                0.1672	target_mean:               0.3625
+td_error_abs:              0.8025	test_ep_length_mean:      25.0000	test_return_mean:          0.0831	test_return_std:           0.1231
+
+[INFO 21:48:04] my_main t_env: 50041 / 2050000
+[INFO 21:48:04] my_main Estimated time left: 2 hours, 8 minutes, 59 seconds. Time passed: 3 minutes, 14 seconds

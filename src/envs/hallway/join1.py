@@ -39,7 +39,7 @@ class Join1Env(MultiAgentEnv):
         np.random.seed(self._seed)
         self.n_agents = n_agents
         self.n_states = np.array(state_numbers,
-                                 dtype=np.int)
+                                 dtype= int)
 
         # Observations and state
         self.obs_last_action = obs_last_action
@@ -71,7 +71,7 @@ class Join1Env(MultiAgentEnv):
 
         # initialize agents
         self.state_n = np.array([np.random.randint(low=1, high=self.n_states[i]+1) for i in range(self.n_agents)],
-                                dtype=np.int)
+                                dtype=int)
 
     def step(self, actions):
         """Returns reward, terminated, info."""
@@ -159,7 +159,7 @@ class Join1Env(MultiAgentEnv):
         self._episode_steps = 0
         self.last_action = np.zeros((self.n_agents, self.n_actions))
         self.state_n = np.array([np.random.randint(low=1, high=self.n_states[i]+1) for i in range(self.n_agents)],
-                                dtype=np.int)
+                                dtype=int)
 
         return self.get_obs(), self.get_state()
 

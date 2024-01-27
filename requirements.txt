@@ -1,0 +1,15 @@
+numpy
+scipy
+pyyaml
+matplotlib
+imageio
+tensorboard-logger
+pygame
+jsonpickle==0.9.6
+torch
+torchvision
+snakeviz
+pytest
+probscale
+git+https://github.com/oxwhirl/sacred.git
+git+https://github.com/oxwhirl/smac.git
